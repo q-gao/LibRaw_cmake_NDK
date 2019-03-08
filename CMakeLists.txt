@@ -155,14 +155,16 @@ MACRO_BOOL_TO_01(LCMS_SUPPORT_CAN_BE_COMPILED LIBRAW_USE_LCMS)
 
 # JPEG library check
 
-# DETECT_JPEG()
-# IF(JPEG_FOUND)
-#     if (${JPEG_LIB_VERSION} LESS 80)
-#         set(JPEG8_FOUND FALSE)
-#     else()
-#         set(JPEG8_FOUND TRUE)
-#     endif()
-# ENDIF()
+if(NOT DEFINED MSVC)
+    DETECT_JPEG()
+    IF(JPEG_FOUND)
+        if (${JPEG_LIB_VERSION} LESS 80)
+            set(JPEG8_FOUND FALSE)
+        else()
+            set(JPEG8_FOUND TRUE)
+        endif()
+    ENDIF()
+endif()
 
 MACRO_LOG_FEATURE(JPEG8_FOUND "libjpeg" "JPEG image format support" "http://www.ijg.org" FALSE "80" "needed for the LibRaw DNG lossy codec")
 
