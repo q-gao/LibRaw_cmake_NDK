@@ -1,1 +1,4 @@
 samples/lens-identify.cpp
+bin/
+object/
+build*/

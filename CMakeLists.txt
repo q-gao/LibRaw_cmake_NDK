@@ -63,7 +63,10 @@ MESSAGE(STATUS "LibRaw SO version:     ${RAW_LIB_SO_VERSION_STRING}")
 
 # ==================================================================================================
 # Project Options
-OPTION(BUILD_SHARED_LIBS           "Build library as shared library                 (default=ON)"                 ON)
+# BUILD_SHARED_LIBS is cmake built-in variable: https://cmake.org/cmake/help/v3.0/variable/BUILD_SHARED_LIBS.html
+#OPTION(BUILD_SHARED_LIBS           "Build library as shared library                 (default=ON)"                 ON)
+OPTION(BUILD_SHARED_LIBS           "Build library as shared library                 (default=ON)"                 OFF)
+
 OPTION(ENABLE_OPENMP               "Build library with OpenMP support               (default=ON)"                 ON)
 OPTION(ENABLE_LCMS                 "Build library with LCMS support                 (default=ON)"                 ON)
 OPTION(ENABLE_EXAMPLES             "Build library with sample command-line programs (default=ON)"                 ON)
